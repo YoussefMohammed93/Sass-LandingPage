@@ -11,6 +11,11 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: {
+          DEFAULT: "var(--primary)",
+          90: "rgba(231, 88, 55, 0.9)",
+          5: "rgba(231, 88, 55, 0.05)",
+        },
       },
     },
   },
