@@ -6,17 +6,18 @@
   --background: #f7f2ea;
   --foreground: #101010;
   --primary: #e75837;
+  --muted-foreground: #666666;
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  height: 200vh;
   font-optical-sizing: auto;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
 }
 

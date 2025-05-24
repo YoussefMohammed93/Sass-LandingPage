@@ -169,34 +169,10 @@ export const Header = () => {
           if (headerRef.current) {
             const progress = self.progress;
             gsap.to(headerRef.current, {
-              backgroundColor:
+              borderBottom:
                 progress > 0
-                  ? "rgba(247, 242, 234, 0.95)"
-                  : "rgba(247, 242, 234, 1)",
-              backdropFilter: progress > 0 ? "blur(15px)" : "blur(0px)",
-              boxShadow:
-                progress > 0
-                  ? "0 4px 20px rgba(0, 0, 0, 0.1)"
-                  : "0 0 0 rgba(0, 0, 0, 0)",
-              y: progress > 0.1 ? -2 : 0,
-              duration: 0.3,
-              ease: "power2.out",
-            });
-          }
-        },
-        onEnter: () => {
-          if (headerRef.current) {
-            gsap.to(headerRef.current, {
-              scale: 0.98,
-              duration: 0.3,
-              ease: "power2.out",
-            });
-          }
-        },
-        onLeave: () => {
-          if (headerRef.current) {
-            gsap.to(headerRef.current, {
-              scale: 1,
+                  ? "1px solid rgba(0, 0, 0, 0.1)"
+                  : "1px solid transparent",
               duration: 0.3,
               ease: "power2.out",
             });

@@ -2,12 +2,19 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 
-import { Inter } from "next/font/google";
+import { Inter, Ovo } from "next/font/google";
 
 const inter = Inter({
   display: "swap",
   subsets: ["latin"],
   variable: "--font-inter",
+});
+
+const ovo = Ovo({
+  display: "swap",
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-ovo",
 });
 
 export const metadata: Metadata = {
@@ -26,7 +33,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>{children}</body>
+      <body className={`${inter.variable} ${ovo.variable} antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }

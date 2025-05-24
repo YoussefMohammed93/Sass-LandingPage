@@ -16,6 +16,10 @@ const config: Config = {
           90: "rgba(231, 88, 55, 0.9)",
           5: "rgba(231, 88, 55, 0.05)",
         },
+        "muted-foreground": "var(--muted-foreground)",
+      },
+      fontFamily: {
+        ovo: ["var(--font-ovo)", "serif"],
       },
     },
   },
