@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 import { Inter, Ovo } from "next/font/google";
+import { ScrollToTopButton } from "@/components/scroll-to-top-button";
 
 const inter = Inter({
   display: "swap",
@@ -35,6 +36,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${ovo.variable} antialiased`}>
         {children}
+        <ScrollToTopButton />
       </body>
     </html>
   );
