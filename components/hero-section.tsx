@@ -236,7 +236,7 @@ export const HeroSection = () => {
       <div className="relative z-10">
         <h1
           ref={headingRef}
-          className="max-w-5xl mx-auto text-center text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-foreground pt-28 md:pt-40 md-custom:pt-28 font-ovo"
+          className="max-w-5xl mx-auto text-center text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-foreground pt-24 md:pt-40 md-custom:pt-28 font-ovo"
           style={{ willChange: "transform, opacity" }}
         >
           A digital office manager for pet care businesses
