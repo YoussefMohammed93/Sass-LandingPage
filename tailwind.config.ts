@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        "md-custom": "825px",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

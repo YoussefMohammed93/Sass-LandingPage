@@ -347,10 +347,27 @@ export const Header = () => {
   const handleButtonHover = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (prefersReducedMotion()) return;
 
-    gsap.to(e.currentTarget, {
+    const button = e.currentTarget;
+    const rect = button.getBoundingClientRect();
+
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
+
+    const relativeX = (mouseX - centerX) / (rect.width / 2);
+    const relativeY = (mouseY - centerY) / (rect.height / 2);
+
+    const rotation = relativeX * 3;
+
+    const translateX = relativeX * 2;
+    const translateY = relativeY * 2 - 2;
+
+    gsap.to(button, {
       scale: 1.05,
-      y: -2,
-      rotation: 1,
+      x: translateX,
+      y: translateY,
+      rotation: rotation,
       boxShadow: "0 8px 25px rgba(231, 88, 55, 0.3)",
       duration: animationConfig.fastDuration,
       ease: animationConfig.bounceEase,
@@ -362,6 +379,7 @@ export const Header = () => {
 
     gsap.to(e.currentTarget, {
       scale: 1,
+      x: 0,
       y: 0,
       rotation: 0,
       boxShadow: "0 0 0 rgba(231, 88, 55, 0)",
@@ -376,7 +394,7 @@ export const Header = () => {
         ref={headerRef}
         className="w-full fixed top-0 left-0 z-50 bg-[#fbf8f3]"
       >
-        <div className="flex items-center justify-between max-w-[1320px] mx-auto px-5 py-4 md:py-5">
+        <div className="flex items-center justify-between max-w-[1320px] mx-auto px-5 xl:px-1 py-4 md:py-5">
           <div className="flex items-center justify-between w-full md:hidden">
             <div>
               <Logo />
