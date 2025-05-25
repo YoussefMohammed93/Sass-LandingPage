@@ -37,63 +37,6 @@ export const FeaturesSoftware = () => {
     [prefersReducedMotion]
   );
 
-  const handleFeatureHover = useCallback(
-    (e: React.MouseEvent<HTMLDivElement>) => {
-      if (prefersReducedMotion()) return;
-
-      const config = getAnimationConfig();
-      const item = e.currentTarget;
-      const mobile = isMobile();
-
-      gsap.to(item, {
-        scale: mobile ? 1.02 : 1.05,
-        y: mobile ? -2 : -5,
-        boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
-        duration: config.fastDuration,
-        ease: config.ease,
-      });
-
-      const checkIcon = item.querySelector(".check-icon");
-      if (checkIcon) {
-        gsap.to(checkIcon, {
-          scale: mobile ? 1.1 : 1.2,
-          rotation: mobile ? 0 : 5,
-          duration: config.fastDuration,
-          ease: config.bounceEase,
-        });
-      }
-    },
-    [getAnimationConfig, prefersReducedMotion, isMobile]
-  );
-
-  const handleFeatureLeave = useCallback(
-    (e: React.MouseEvent<HTMLDivElement>) => {
-      if (prefersReducedMotion()) return;
-
-      const config = getAnimationConfig();
-      const item = e.currentTarget;
-
-      gsap.to(item, {
-        scale: 1,
-        y: 0,
-        boxShadow: "0 0px 0px rgba(0, 0, 0, 0)",
-        duration: config.fastDuration,
-        ease: config.ease,
-      });
-
-      const checkIcon = item.querySelector(".check-icon");
-      if (checkIcon) {
-        gsap.to(checkIcon, {
-          scale: 1,
-          rotation: 0,
-          duration: config.fastDuration,
-          ease: config.ease,
-        });
-      }
-    },
-    [getAnimationConfig, prefersReducedMotion]
-  );
-
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       const animationConfig = getAnimationConfig();
@@ -129,8 +72,6 @@ export const FeaturesSoftware = () => {
       } else {
         gsap.set(headingRef.current, {
           opacity: 0,
-          y: 60,
-          rotationX: mobile ? 0 : 20,
           scale: 0.95,
           filter: "blur(4px)",
           transformOrigin: "center center",
@@ -138,8 +79,6 @@ export const FeaturesSoftware = () => {
 
         gsap.set(gridItemsRef.current.filter(Boolean), {
           opacity: 0,
-          x: mobile ? 0 : -150,
-          y: mobile ? 80 : 40,
           scale: 0.8,
           rotationY: mobile ? 0 : 15,
           rotationX: mobile ? 0 : 5,
@@ -159,7 +98,6 @@ export const FeaturesSoftware = () => {
         tl.to(headingRef.current, {
           opacity: 1,
           y: 0,
-          rotationX: 0,
           scale: 1,
           filter: "blur(0px)",
           duration: animationConfig.slowDuration,
@@ -226,22 +164,19 @@ export const FeaturesSoftware = () => {
                   {
                     y: 0,
                     x: 0,
-                    rotation: 0,
                   }
                 );
                 return;
               }
 
               gsap.to(headingRef.current, {
-                y: progress * 50,
-                rotation: progress * 2,
+                y: progress * 30,
                 duration: 0.3,
                 ease: "sine.out",
               });
 
               gsap.to(gridItemsRef.current.filter(Boolean), {
-                y: progress * 80,
-                rotation: progress * -1,
+                y: progress * 50,
                 duration: 0.3,
                 ease: "sine.out",
               });
@@ -257,27 +192,8 @@ export const FeaturesSoftware = () => {
   return (
     <>
       <style jsx>{`
-        .feature-item {
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-          cursor: pointer;
-          border-radius: 8px;
-          padding: 8px;
-          margin: -8px;
-          will-change: transform;
-        }
-        .feature-item:hover {
-          transform: translateY(-2px);
-        }
         .check-icon {
           will-change: transform;
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .feature-item {
-            transition: none;
-          }
-          .feature-item:hover {
-            transform: none;
-          }
         }
       `}</style>
       <section
@@ -286,7 +202,7 @@ export const FeaturesSoftware = () => {
       >
         <h2
           ref={headingRef}
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-ovo will-change-transform"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl will-change-transform"
         >
           Software designed for today&apos;s pet care
         </h2>
@@ -299,9 +215,7 @@ export const FeaturesSoftware = () => {
               ref={(el) => {
                 if (el) gridItemsRef.current[0] = el;
               }}
-              className="feature-item flex items-center gap-2"
-              onMouseEnter={handleFeatureHover}
-              onMouseLeave={handleFeatureLeave}
+              className="flex items-center gap-2"
             >
               <span>
                 <BiCheck className="check-icon size-8 text-primary" />
@@ -314,9 +228,7 @@ export const FeaturesSoftware = () => {
               ref={(el) => {
                 if (el) gridItemsRef.current[1] = el;
               }}
-              className="feature-item flex items-center gap-2"
-              onMouseEnter={handleFeatureHover}
-              onMouseLeave={handleFeatureLeave}
+              className="flex items-center gap-2"
             >
               <span>
                 <BiCheck className="check-icon size-8 text-primary" />
@@ -329,9 +241,7 @@ export const FeaturesSoftware = () => {
               ref={(el) => {
                 if (el) gridItemsRef.current[2] = el;
               }}
-              className="feature-item flex items-center gap-2"
-              onMouseEnter={handleFeatureHover}
-              onMouseLeave={handleFeatureLeave}
+              className="flex items-center gap-2"
             >
               <span>
                 <BiCheck className="check-icon size-8 text-primary" />
@@ -346,9 +256,7 @@ export const FeaturesSoftware = () => {
               ref={(el) => {
                 if (el) gridItemsRef.current[3] = el;
               }}
-              className="feature-item flex items-center gap-2"
-              onMouseEnter={handleFeatureHover}
-              onMouseLeave={handleFeatureLeave}
+              className="flex items-center gap-2"
             >
               <span>
                 <BiCheck className="check-icon size-8 text-primary" />
@@ -361,9 +269,7 @@ export const FeaturesSoftware = () => {
               ref={(el) => {
                 if (el) gridItemsRef.current[4] = el;
               }}
-              className="feature-item flex items-center gap-2"
-              onMouseEnter={handleFeatureHover}
-              onMouseLeave={handleFeatureLeave}
+              className="flex items-center gap-2"
             >
               <span>
                 <BiCheck className="check-icon size-8 text-primary" />
@@ -376,9 +282,7 @@ export const FeaturesSoftware = () => {
               ref={(el) => {
                 if (el) gridItemsRef.current[5] = el;
               }}
-              className="feature-item flex items-center gap-2"
-              onMouseEnter={handleFeatureHover}
-              onMouseLeave={handleFeatureLeave}
+              className="flex items-center gap-2"
             >
               <span>
                 <BiCheck className="check-icon size-8 text-primary" />
@@ -393,9 +297,7 @@ export const FeaturesSoftware = () => {
               ref={(el) => {
                 if (el) gridItemsRef.current[6] = el;
               }}
-              className="feature-item flex items-center gap-2"
-              onMouseEnter={handleFeatureHover}
-              onMouseLeave={handleFeatureLeave}
+              className="flex items-center gap-2"
             >
               <span>
                 <BiCheck className="check-icon size-8 text-primary" />
@@ -408,9 +310,7 @@ export const FeaturesSoftware = () => {
               ref={(el) => {
                 if (el) gridItemsRef.current[7] = el;
               }}
-              className="feature-item flex items-center gap-2"
-              onMouseEnter={handleFeatureHover}
-              onMouseLeave={handleFeatureLeave}
+              className="flex items-center gap-2"
             >
               <span>
                 <BiCheck className="check-icon size-8 text-primary" />
@@ -423,9 +323,7 @@ export const FeaturesSoftware = () => {
               ref={(el) => {
                 if (el) gridItemsRef.current[8] = el;
               }}
-              className="feature-item flex items-center gap-2"
-              onMouseEnter={handleFeatureHover}
-              onMouseLeave={handleFeatureLeave}
+              className="flex items-center gap-2"
             >
               <span>
                 <BiCheck className="check-icon size-8 text-primary" />
