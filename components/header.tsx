@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 import { gsap } from "gsap";
 import { Logo } from "./logo";
@@ -26,6 +27,12 @@ export const Header = () => {
 
   const [isAnimating, setIsAnimating] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const pathname = usePathname();
+
+  const isActiveLink = (href: string) => {
+    return pathname === href;
+  };
 
   const headerLinks = [
     {
@@ -421,7 +428,9 @@ export const Header = () => {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-base sm:text-lg font-light hover:text-primary ease-in duration-150"
+                      className={`text-base sm:text-lg font-light hover:text-primary ease-in duration-150 ${
+                        isActiveLink(link.href) ? "text-primary" : ""
+                      }`}
                     >
                       {link.label}
                     </Link>
@@ -472,7 +481,11 @@ export const Header = () => {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-white text-2xl font-light hover:text-white/80 transition-colors duration-150"
+                    className={`text-2xl font-light transition-colors duration-150 ${
+                      isActiveLink(link.href)
+                        ? "text-black hover:text-black"
+                        : "text-white hover:text-white/80"
+                    }`}
                     onClick={closeMobileMenu}
                   >
                     {link.label}

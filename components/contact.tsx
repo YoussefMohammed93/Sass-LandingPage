@@ -215,7 +215,7 @@ export const Contact = () => {
     <>
       <section
         ref={sectionRef}
-        className="py-20 sm:py-24 md:py-32 lg:py-36 max-w-[1240px] px-5 xl:px-0 mx-auto"
+        className="py-24 md:py-32 lg:py-36 max-w-[1240px] px-5 xl:px-0 mx-auto"
       >
         <div
           ref={containerRef}
@@ -342,7 +342,6 @@ export const Contact = () => {
           </div>
         </div>
       </section>
-
       {showToast && (
         <div className="fixed bottom-6 right-6 z-50 bg-primary text-white px-6 py-3 rounded-full shadow-lg animate-pulse">
           <p className="font-light">Message sent successfully!</p>
