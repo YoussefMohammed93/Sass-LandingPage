@@ -1,6 +1,7 @@
 import { FeaturesHero } from "@/components/features-hero";
 import { FeaturesSoftware } from "@/components/features-software";
 import { FeaturesIconsGridSection } from "@/components/features-icons-grid";
+import { CalloutBlockSectionFeaturesOne } from "@/components/callout-block-section-features-one";
 
 export default function FeaturesPage() {
   return (
@@ -8,6 +9,7 @@ export default function FeaturesPage() {
       <FeaturesHero />
       <FeaturesSoftware />
       <FeaturesIconsGridSection />
+      <CalloutBlockSectionFeaturesOne />
     </main>
   );
 }
