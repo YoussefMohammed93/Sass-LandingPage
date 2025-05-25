@@ -1,5 +1,6 @@
 import { FeaturesHero } from "@/components/features-hero";
 import { FeaturesSoftware } from "@/components/features-software";
+import { FeaturesBusiness } from "@/components/features-business";
 import { FeaturesIconsGridSection } from "@/components/features-icons-grid";
 import { CalloutBlockSectionFeaturesOne } from "@/components/callout-block-section-features-one";
 
@@ -10,6 +11,7 @@ export default function FeaturesPage() {
       <FeaturesSoftware />
       <FeaturesIconsGridSection />
       <CalloutBlockSectionFeaturesOne />
+      <FeaturesBusiness />
     </main>
   );
 }
