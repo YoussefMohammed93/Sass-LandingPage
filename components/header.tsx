@@ -394,7 +394,7 @@ export const Header = () => {
         ref={headerRef}
         className="w-full fixed top-0 left-0 z-50 bg-[#fbf8f3]"
       >
-        <div className="flex items-center justify-between max-w-[1320px] mx-auto px-5 xl:px-1 py-4 md:py-5">
+        <div className="flex items-center justify-between max-w-[1240px] mx-auto px-5 xl:px-1 py-4 md:py-5">
           <div className="flex items-center justify-between w-full md:hidden">
             <div>
               <Logo />

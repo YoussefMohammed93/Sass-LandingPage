@@ -230,7 +230,7 @@ export const HeroSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-background min-h-dvh md:min-h-[70vh] md-custom:min-h-screen xl:min-h-[11 0dvh] max-w-[1320px] mx-5 sm:mx-auto px-5 overflow-hidden rounded-br-[3rem] rounded-bl-[3rem] sm:rounded-br-[5rem] sm:rounded-bl-[5rem]"
+      className="relative bg-background min-h-screen md:min-h-[70vh] md-custom:min-h-screen max-w-[1240px] mx-5 sm:mx-auto px-5 overflow-hidden rounded-br-[3rem] rounded-bl-[3rem] sm:rounded-br-[5rem] sm:rounded-bl-[5rem]"
       style={{ willChange: "transform" }}
     >
       <div className="relative z-10">
