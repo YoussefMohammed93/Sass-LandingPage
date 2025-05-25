@@ -7,6 +7,7 @@ import { FeaturesSectionTwo } from "@/components/features-section-two";
 import { CalloutBlockSection } from "@/components/callout-block-section";
 import { FeaturesSectionThree } from "@/components/features-section-three";
 import { CalloutBlockSectionTwo } from "@/components/callout-block-section-two";
+import { Footer } from "@/components/footer";
 
 export default function LandingPage() {
   return (
@@ -22,6 +23,7 @@ export default function LandingPage() {
         <CalloutBlockSectionTwo />
         <TechSection />
       </main>
+      <Footer />
     </>
   );
 }
