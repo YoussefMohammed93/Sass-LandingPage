@@ -13,6 +13,7 @@ const config: Config = {
       },
       colors: {
         background: "var(--background)",
+        secondary: "var(--secondary)",
         foreground: "var(--foreground)",
         primary: {
           DEFAULT: "var(--primary)",

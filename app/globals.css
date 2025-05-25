@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --background: #f7f2ea;
-  --foreground: #101010;
   --primary: #e75837;
+  --background: #f7f2ea;
+  --secondary: #fbf8f3;
+  --foreground: #101010;
   --muted-foreground: #666666;
 }
 
 body {
   color: var(--foreground);
-  height: 200vh;
   font-optical-sizing: auto;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;

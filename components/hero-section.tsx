@@ -156,18 +156,18 @@ export const HeroSection = () => {
           onUpdate: (self) => {
             const progress = self.progress;
             gsap.to(heroImageRef.current, {
-              y: progress * 200,
-              duration: 0.3,
+              y: progress * 320,
+              duration: 0.5,
               ease: "sine",
             });
             gsap.to(phoneRef.current, {
               y: progress * 150,
-              duration: 0.3,
+              duration: 0.5,
               ease: "sine",
             });
             gsap.to([card1Ref.current, card2Ref.current], {
               y: progress * 80,
-              duration: 0.3,
+              duration: 0.5,
               ease: "sine",
             });
           },
@@ -230,7 +230,7 @@ export const HeroSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-background min-h-dvh md:min-h-[70vh] md-custom:min-h-screen xl:min-h-[11 0dvh] max-w-[1320px] mx-5 sm:mx-auto px-5 overflow-hidden rounded-br-[3rem] rounded-bl-[3rem] sm:rounded-br-[6rem] sm:rounded-bl-[6rem]"
+      className="relative bg-background min-h-dvh md:min-h-[70vh] md-custom:min-h-screen xl:min-h-[11 0dvh] max-w-[1320px] mx-5 sm:mx-auto px-5 overflow-hidden rounded-br-[3rem] rounded-bl-[3rem] sm:rounded-br-[5rem] sm:rounded-bl-[5rem]"
       style={{ willChange: "transform" }}
     >
       <div className="relative z-10">
