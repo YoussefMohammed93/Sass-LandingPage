@@ -247,10 +247,11 @@ export const PricingHero = () => {
         </h1>
         <div
           ref={buttonRef}
-          className="pt-10 flex justify-center will-change-transform"
+          className="pt-16 flex justify-center will-change-transform"
         >
           <Link href="/">
             <Button
+              className="!px-16 text-lg"
               onMouseEnter={handleButtonHover}
               onMouseLeave={handleButtonLeave}
               style={{ willChange: "transform" }}
