@@ -2,6 +2,8 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
 import { Inter, Ovo } from "next/font/google";
 import { ScrollToTopButton } from "@/components/scroll-to-top-button";
 
@@ -35,7 +37,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${ovo.variable} antialiased`}>
+        <Header />
         {children}
+        <Footer />
         <ScrollToTopButton />
       </body>
     </html>
