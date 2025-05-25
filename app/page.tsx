@@ -1,5 +1,6 @@
 import { Header } from "@/components/header";
 import { HeroSection } from "@/components/hero-section";
+import { TechSection } from "@/components/tech-section";
 import { IconsGridSection } from "@/components/icons-grid-section";
 import { FeaturesSectionOne } from "@/components/features-section-one";
 import { FeaturesSectionTwo } from "@/components/features-section-two";
@@ -19,6 +20,7 @@ export default function LandingPage() {
         <FeaturesSectionThree />
         <IconsGridSection />
         <CalloutBlockSectionTwo />
+        <TechSection />
       </main>
     </>
   );
